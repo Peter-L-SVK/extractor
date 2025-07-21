@@ -12,7 +12,7 @@ API_URL = "https://api.golemio.cz/v2/municipallibraries"
 API_KEY = os.getenv('GOLEMIO_API_KEY')  # API kľúč sa načíta z premenných prostredia
 
 def get_data():
-    """Získa dáta z API a vráti ich ako dictionary"""
+    # Funkcia získa dáta z API a vráti ich ako dictionary
     if not API_KEY:
         raise ValueError("API kľúč nie je nastavený. Nastavte ho v premenných prostredia.")
     
@@ -28,7 +28,7 @@ def get_data():
     return data
 
 def save_data(data, output_file):
-    """Uloží dáta do CSV súboru"""
+    # Fnkcia uloží dáta do CSV súboru
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     
     with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
@@ -69,7 +69,7 @@ def save_data(data, output_file):
             writer.writerow(row_data)
 
 def process_opening_hours(props, row_data, days):
-    """Spracuje údaje o otváracích hodinách a pridá ich do riadku"""
+    # Funkcia spracuje údaje o otváracích hodinách a pridá ich do riadku
     opening_hours = props.get("opening_hours", [])
     
     # Ak sú otváracie hodiny ako reťazec, skúsime ich konvertovať na dict
@@ -95,7 +95,7 @@ def process_opening_hours(props, row_data, days):
                 row_data[f"{day}_description"] = hour.get("description", "N/A")
 
 def fetch_and_save_data():
-    """Hlavná funkcia, ktorá koordinuje získavanie a ukladanie dát"""
+    # Hlavná funkcia, ktorá koordinuje získavanie a ukladanie dát
     try:
         # Získanie dát
         data = get_data()
