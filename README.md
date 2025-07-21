@@ -32,3 +32,21 @@ Naplánujte denné spustenie cez `cron` (Linux/macOS) alebo Task Scheduler (Wind
 ```bash
 0 7 * * 1 /usr/bin/python3 /cesta/k/skriptu/golemio_extractor.py
 ```
+
+## Ako spustiť testy:
+
+1. Nainštalujte potrebné balíčky:
+   ```bash
+   pip install pytest pytest-cov requests
+   ```
+2. Spustite testy s pokrytím kódu:
+   ```bash
+   python test_golemio_extractor.py
+   ```
+
+### Výstup testov bude obsahovať:
+
+-  Zoznam úspešných testov
+-  Akékoľvek zlyhané testy
+-  Percento pokrytia kódu testami
+-  Informácie o tom, ktoré časti kódu nie sú testované
