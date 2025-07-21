@@ -1,0 +1,12 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Sensitive data
+*.key
+*.pem
+*.secret
+
+Buffer files
+*~
