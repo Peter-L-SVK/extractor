@@ -28,7 +28,7 @@ def get_data():
     return data
 
 def save_data(data, output_file):
-    # Fnkcia uloží dáta do CSV súboru
+    # Funkcia uloží dáta do CSV súboru
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     
     with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
