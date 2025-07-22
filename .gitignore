@@ -8,5 +8,5 @@
 *.pem
 *.secret
 
-Buffer files
+# Buffer files
 *~
