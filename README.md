@@ -32,6 +32,21 @@ Naplánujte denné spustenie cez `cron` (Linux/macOS) alebo Task Scheduler (Wind
 ```bash
 0 7 * * 1 /usr/bin/python3 /cesta/k/skriptu/golemio_extractor.py
 ```
+Cron vysvetlenie:
+```
+0 7 * * 1
+| | | | |
+| | | | +--- Deň v týždni (0-6, 0=nedela, 1=pondelok)
+| | | +----- Mesiac (1-12)
+| | +------- Deň v mesiaci (1-31)
+| +--------- Hodina (0-23)
++----------- Minúta (0-59)
+```
+
+Ak používate virtuálne prostredie Python, upravte príkaz takto:
+```bash
+0 7 * * 1 cd /cesta/k/vasmu/projektu && /cesta/k/vasmu/venv/bin/python /cesta/k/vasmu/projektu/golemio_extractor.py
+```
 
 ## Ako spustiť testy:
 
